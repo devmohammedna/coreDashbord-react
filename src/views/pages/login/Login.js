@@ -1,5 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { Link, useHistory } from 'react-router-dom'
+import axios from 'axios'
 import {
   CButton,
   CCard,
@@ -16,6 +18,31 @@ import {
 import CIcon from '@coreui/icons-react'
 
 const Login = () => {
+  const dispatch = useDispatch()
+  const history = useHistory()
+  const [mobile, setMobile] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios
+      .post('http://fresh-app.com/api/admin/login', {
+        mobile,
+        password,
+      })
+      .then((res) => {
+        const token = res.data.accessToken
+        localStorage.setItem('token', token)
+        dispatch({ type: 'set', isLoggedIn: true })
+        console.log(res)
+        history.push('./')
+      })
+      .catch((err) => {
+        const error = err.response.data.massege
+        console.log(error)
+      })
+  }
+
   return (
     <div className="bg-light min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
@@ -24,23 +51,33 @@ const Login = () => {
             <CCardGroup>
               <CCard className="p-4">
                 <CCardBody>
-                  <CForm>
+                  <CForm onSubmit={handleSubmit}>
                     <h1>Login</h1>
                     <p className="text-medium-emphasis">Sign In to your account</p>
                     <CInputGroup className="mb-3">
                       <CInputGroupText>
                         <CIcon name="cil-user" />
                       </CInputGroupText>
-                      <CFormControl placeholder="Username" autoComplete="username" />
+                      <CFormControl
+                        placeholder="Phone"
+                        autoComplete="Number"
+                        type="number"
+                        value={mobile}
+                        onChange={(e) => setMobile(e.target.value)}
+                        required
+                      />
                     </CInputGroup>
                     <CInputGroup className="mb-4">
                       <CInputGroupText>
                         <CIcon name="cil-lock-locked" />
                       </CInputGroupText>
                       <CFormControl
+                        value={password}
                         type="password"
+                        onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
                         autoComplete="current-password"
+                        required
                       />
                     </CInputGroup>
                     <CRow>
@@ -50,7 +87,7 @@ const Login = () => {
                         </CButton>
                       </CCol>
                       <CCol xs="6" className="text-right">
-                        <CButton color="link" className="px-0">
+                        <CButton color="link" className="px-0" type="submit">
                           Forgot password?
                         </CButton>
                       </CCol>

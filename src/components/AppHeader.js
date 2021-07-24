@@ -12,7 +12,6 @@ import {
   CNavItem,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-
 import { AppBreadcrumb } from './index'
 
 import { AppHeaderDropdown } from './header/index'
@@ -23,7 +22,7 @@ const AppHeader = () => {
 
   return (
     <CHeader position="sticky" className="mb-4">
-      <CContainer fluid>
+      <CContainer fluid className="hdr-rtl">
         <CHeaderToggler
           className="ms-md-3 d-lg-none"
           onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
@@ -68,7 +67,7 @@ const AppHeader = () => {
         </CHeaderNav>
       </CContainer>
       <CHeaderDivider />
-      <CContainer fluid>
+      <CContainer fluid className="hdr-rtl">
         <AppBreadcrumb />
       </CContainer>
     </CHeader>

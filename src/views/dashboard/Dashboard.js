@@ -268,6 +268,7 @@ const Dashboard = () => {
                 </CCol>
 
                 <CCol xs="12" md="6" xl="6">
+                  {' '}
                   <CRow>
                     <CCol sm="6">
                       <div className="border-start border-start-4 border-start-warning py-1 px-3 mb-3">
@@ -282,9 +283,7 @@ const Dashboard = () => {
                       </div>
                     </CCol>
                   </CRow>
-
                   <hr className="mt-0" />
-
                   <div className="progress-group mb-4">
                     <div className="progress-group-header">
                       <CIcon className="icon icon-lg me-2" name="cil-user" />
@@ -305,7 +304,6 @@ const Dashboard = () => {
                       <CProgress thin color="warning" value={37} />
                     </div>
                   </div>
-
                   <div className="progress-group">
                     <div className="progress-group-header">
                       <CIcon className="icon icon-lg me-2" name="cib-google" />

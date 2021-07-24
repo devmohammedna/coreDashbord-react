@@ -1,1 +1,25 @@
 // Here you can add other styles
+// @import '../components/AppHeader.js';
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.hdr-rtl {
+  flex-direction: row-reverse;
+}
+.simplebar-content-wrapper {
+  direction: rtl !important;
+}
+.sidebar-toggler {
+  &::before {
+    transform: rotate(180deg);
+  }
+}
