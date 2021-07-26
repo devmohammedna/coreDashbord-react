@@ -18,7 +18,7 @@ import {
 import { DocsCallout } from 'src/reusable'
 import CIcon from '@coreui/icons-react'
 import axios from 'axios'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton'
 
 const Tables = () => {
   const token = localStorage.getItem('token')
@@ -71,7 +71,7 @@ const Tables = () => {
                   <CTableHeaderCell scope="col">الايميل</CTableHeaderCell>
                   <CTableHeaderCell scope="col">الرقم</CTableHeaderCell>
                   <CTableHeaderCell scope="col">المدينة</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">الصورة</CTableHeaderCell>
+
                   <CTableHeaderCell scope="col">العمر</CTableHeaderCell>
                   <CTableHeaderCell scope="col">السيارة</CTableHeaderCell>
                   <CTableHeaderCell scope="col">النوع</CTableHeaderCell>
