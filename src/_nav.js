@@ -85,12 +85,12 @@ const _nav = [
       //   anchor: 'Navs & Tabs',
       //   to: '/base/navs',
       // },
-      // {
-      //   _component: 'CNavItem',
-      //   as: NavLink,
-      //   anchor: 'Pagination',
-      //   to: '/base/paginations',
-      // },
+      {
+        _component: 'CNavItem',
+        as: NavLink,
+        anchor: 'Pagination',
+        to: '/base/paginations',
+      },
       // {
       //   _component: 'CNavItem',
       //   as: NavLink,
@@ -103,12 +103,12 @@ const _nav = [
       //   anchor: 'Progress',
       //   to: '/base/progress',
       // },
-      // {
-      //   _component: 'CNavItem',
-      //   as: NavLink,
-      //   anchor: 'Spinners',
-      //   to: '/base/spinners',
-      // },
+      {
+        _component: 'CNavItem',
+        as: NavLink,
+        anchor: 'Spinners',
+        to: '/base/spinners',
+      },
       {
         _component: 'CNavItem',
         as: NavLink,

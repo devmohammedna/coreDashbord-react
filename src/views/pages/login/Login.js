@@ -31,11 +31,10 @@ const Login = () => {
         password,
       })
       .then((res) => {
-        const token = res.data.accessToken
-        localStorage.setItem('token', token)
+        localStorage.setItem('token', res.data.accessToken)
         dispatch({ type: 'set', isLoggedIn: true })
-        console.log(res)
-        history.push('./')
+
+        history.push('/')
       })
       .catch((err) => {
         const error = err.response.data.massege
@@ -82,7 +81,7 @@ const Login = () => {
                     </CInputGroup>
                     <CRow>
                       <CCol xs="6">
-                        <CButton color="primary" className="px-4">
+                        <CButton type="submit" color="primary" className="px-4">
                           Login
                         </CButton>
                       </CCol>

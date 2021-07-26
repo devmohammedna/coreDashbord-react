@@ -12,8 +12,9 @@ const DocsCallout = (props) => {
   const _href = `https://coreui.io/react/docs/${packageJson.config.coreui_library_short_version}/${href}`
 
   return (
-    <CCallout color="info" className="bg-white">
-      A React {name} component {plural ? 'have' : 'has'} been created as a native React.js version
+    <CCallout color="info" className="bg-white" style={{ direction: 'rtl' }}>
+      الصفحة تعرض جميع المستخدمين
+      {/* A React {name} component {plural ? 'have' : 'has'} been created as a native React.js version
       of Bootstrap {name}. {name} {plural ? 'are' : 'is'} delivered with some new features,
       variants, and unique design that matches CoreUI Design System requirements.
       <br />
@@ -22,7 +23,7 @@ const DocsCallout = (props) => {
       <CLink href={_href} target="_blank">
         documentation of CoreUI Components Library for React.js
       </CLink>
-      .
+      . */}
     </CCallout>
   )
 }
